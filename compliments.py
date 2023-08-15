@@ -1,4 +1,4 @@
-# #️⃣ Module "compliments" by t.me/wavams
+# #️⃣ Module "compliments" by t.me/wavms
 # ✅ Only for teagram userbot 
 # ⚙️ Commands: .compliments
 # required aioredis_ratelimiter
