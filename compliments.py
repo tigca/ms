@@ -1,19 +1,22 @@
 # #️⃣ Module "compliments" by t.me/wavams
 # ✅ Only for teagram userbot 
 # ⚙️ Commands: .compliments
+from aioredis_ratelimiter import RedisRateLimiter
 from pyrogram import Client, types
 from .. import loader, utils
 import random
 
+
+limiter = RedisRateLimiter()
 
 @loader.module(name="Compliments")
 class ComplimentsMod(loader.Module):
     """👻 Модуль с рандомными комплиментами"""
 
 
-    @loader.ratelimit
-    async def compliments_cmd(self, app: Client, message: types.Message):
-        compliments = [
+    @limiter.limit("5/minute")
+async def compliments_cmd(self, app: Client, message: types.Message):
+    compliments = [
             "Никогда не сдавайся! Ты можешь достичь всего, чего захочешь. Никогда не останавливайся на достигнутом и иди вперед!",
             "Никогда не сдавайся! Даже если все кажется безнадежным, продолжай бороться и верить в себя. Верь в свои силы и ты обязательно добьёшься успеха!",
             "Никогда не сдавайся! Не позволяй трудностям сломить тебя. Борись до конца и никогда не сдавайся! ",
