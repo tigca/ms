@@ -1,6 +1,7 @@
 # #️⃣ Module "compliments" by t.me/wavams
 # ✅ Only for teagram userbot 
 # ⚙️ Commands: .compliments
+# required aioredis_ratelimiter
 from aioredis_ratelimiter import RedisRateLimiter
 from pyrogram import Client, types
 from .. import loader, utils
