@@ -12,7 +12,7 @@ class ComplimentsMod(loader.Module):
 
 
     @loader.ratelimit
-    async def complimentscmd(self, app: Client, message: types.Message):
+    async def compliments_cmd(self, app: Client, message: types.Message):
         compliments = [
             "Ты лучший!",
             "Не сдавайся!",
